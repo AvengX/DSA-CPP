@@ -3,7 +3,7 @@ using namespace std;
 int binarysearch(int arr[],int size,int target){
 int start=0;
 int end=size-1;
-int mid=(start + end)/2;//can use start\2 +end/2 or start +(start-end)\2,reason is thatr (start+end)/2 can lead to overflow
+int mid=(start + end)/2;//can use start\2 +end/2 or start +(end-start)\2,reason is thatr (start+end)/2 can lead to overflow
 while(start<=end){
     int element=arr[mid];
     if(element==target){
