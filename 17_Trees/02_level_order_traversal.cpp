@@ -46,7 +46,7 @@ void levelOrderTraversal(Node*root){
 }
 
 int main() {
-    Node*root=NULL;
+    Node*root=NULL;  
     root=buildTree();
     levelOrderTraversal(root);
     return 0;
