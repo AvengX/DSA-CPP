@@ -52,7 +52,7 @@ int findPosition(int arr[], int n, int element) {
 Node* buildTreeFromPreorderInorder(int inorder[], int preorder[], int size, int &preindex, int inorderStart, int inorderEnd) {
     if (preindex >= size || inorderStart > inorderEnd) {
         return NULL;
-    }
+    } 
 
     int element = preorder[preindex++];
     Node* root = new Node(element);
@@ -79,4 +79,4 @@ int main() {
     levelOrderTraversal(root);
 
     return 0;
-}
+}                                             
