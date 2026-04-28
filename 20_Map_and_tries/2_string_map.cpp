@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s;
+    cin>>s;
+    map<char,int>mpp;  // if we use here unordered_map then the output comes in random rather than in sequence
+    for(int i=0;i<s.size();i++){
+        mpp[s[i]]++;
+    }
+
+    for(auto it:mpp){
+        cout<<it.first<<"->"<<it.second<<endl;
+    }
+    int q;
+    cin>>q;
+    while(q--){
+        char c;
+        cin>>c;
+        cout<<mpp[c]<<endl;
+    }
+    return 0;
+}
