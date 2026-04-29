@@ -74,7 +74,7 @@ void printRightBoundary(Node* root) {
 
 void boundaryTraversal(Node* root) {
     if(root == NULL) return;
-    
+     
     cout << root->data << " ";
     
     printLeftBoundary(root->left);

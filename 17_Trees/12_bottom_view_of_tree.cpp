@@ -16,7 +16,7 @@ class Node {
 
 Node* buildTree() {
     int data;
-    cout << "Enter the data:" << endl;
+    cout << "Enter the data:";
     cin >> data;
     if(data == -1) {
         return NULL; 
@@ -35,7 +35,7 @@ Node* buildTree() {
 void printBottomView(Node* root) {
     if(root == NULL) return;
 
-    map<int, int> topNode;
+    map<int, int> BottomNode;
     queue<pair<Node*, int>> q;
     q.push(make_pair(root, 0));
 
@@ -43,20 +43,20 @@ void printBottomView(Node* root) {
         pair<Node*, int> temp = q.front();
         q.pop();
 
-        Node* frontNode = temp.first;
+        Node* Bottom = temp.first;
         int hd = temp.second;
 
-        topNode[hd] = frontNode->data;
+        BottomNode[hd] = Bottom->data;
 
-        if(frontNode->left)
-            q.push(make_pair(frontNode->left, hd - 1));
+        if(Bottom->left)
+            q.push(make_pair(Bottom->left, hd - 1));
         
-        if(frontNode->right)
-            q.push(make_pair(frontNode->right, hd + 1));
+        if(Bottom->right)
+            q.push(make_pair(Bottom->right, hd + 1));
     }
 
     cout << "Printing the answer :" << endl;
-    for(auto i : topNode) {
+    for(auto i : BottomNode) {
         cout << i.second << " ";
     }
     cout << endl;
