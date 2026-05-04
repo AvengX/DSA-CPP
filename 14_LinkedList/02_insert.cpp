@@ -62,7 +62,7 @@ int main()
     insertAtHead(head, tail, 40);
     insertAtHead(head, tail, 50);
     insertAtHead(head, tail, 60);
-        insertAtHead(head, tail, 56);
+    insertAtHead(head, tail, 56);
 
     print(head);
 
