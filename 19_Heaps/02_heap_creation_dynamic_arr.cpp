@@ -4,6 +4,7 @@ using namespace std;
 class Heap{
     public:
     vector<int> arr;   
+    int size;
 
     Heap(){
         size=0;
