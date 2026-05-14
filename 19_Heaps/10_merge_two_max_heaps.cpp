@@ -54,3 +54,58 @@ int main() {
 
     return 0;
 }
+
+/*
+Complexity Analysis:
+Let N be the size of heap1 and M be the size of heap2.
+
+1. Time Complexity: O(N + M)
+   - Copying elements of heap1 and heap2 into the merged vector takes O(N + M) time.
+   - Building the heap using the bottom-up heapify approach on an array of size (N + M) takes O(N + M) linear time.
+   - Total Time Complexity: O(N + M).
+
+2. Space Complexity: O(N + M)
+   - We allocate a new vector `merged` of size (N + M) to store the combined heap elements.
+   - The recursive call stack for `heapify` takes O(log(N + M)) auxiliary space in the worst case.
+   - Total Space Complexity: O(N + M).
+*/  
+
+
+/*
+#include <bits/stdc++.h>
+using namespace std;
+vector<int> mergeHeaps(vector<int>& a, vector<int>& b,
+                       int n, int m)
+{
+    priority_queue<int> maxHeap;
+    for (int i = 0; i < n; i++) {
+        maxHeap.push(a[i]);
+    }
+    for (int i = 0; i < m; i++) {
+        maxHeap.push(b[i]);
+    }
+
+    vector<int> merged;
+    while (!maxHeap.empty()) {
+        merged.push_back(maxHeap.top());
+        maxHeap.pop();
+    }
+    return merged;
+}
+
+int main()
+{
+    vector<int> a = { 10, 5, 6, 2 };
+    vector<int> b = { 12, 7, 9 };
+    int n = a.size(), m = b.size();
+
+    vector<int> merged = mergeHeaps(a, b, n, m);
+
+    for (int i = 0; i < n + m; i++)
+        cout << merged[i] << " ";
+    return 0;
+}
+
+Time Complexity: O((N + M)*log(N + M)), where N is the size of a[] and M is the size of b[].
+Auxiliary Space: O(N + M), which is the size of the resultant merged binary max heap
+*/

@@ -3,6 +3,7 @@ using namespace std;
 
 int getkthGreatestElement(int*arr,int n,int k){
     priority_queue<int,vector<int>,greater<int>>pq;
+    if(k>n) return -1;
     for(int i=0;i<k;i++){
         pq.push(arr[i]);
     }
@@ -20,7 +21,7 @@ int getkthGreatestElement(int*arr,int n,int k){
 int main() {
     int arr[]={10,5,20,4,15};
     int n=5;
-    int k=4;
+    int k=1;
     int ans=getkthGreatestElement(arr,n,k);
     cout<<k<<"th smallest element is :"<<ans<<endl;
     return 0;

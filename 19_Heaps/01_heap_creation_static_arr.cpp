@@ -54,4 +54,15 @@ int main() {
     // }
     // cout << endl;
     return 0;
-}   
+}
+
+/*
+Complexity Analysis:
+1. Single Insertion (insert):
+   - Time Complexity: O(log n) in the worst case, as the element bubbles up to the root.
+   - Space Complexity: O(1) auxiliary space (iterative approach).
+
+2. Overall Program:
+   - Total Time Complexity: O(n log n) for inserting n elements.
+   - Total Space Complexity: O(1) constant space, since the static array size is fixed at 101.
+*/
