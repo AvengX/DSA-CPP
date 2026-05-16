@@ -26,6 +26,8 @@ vector<int> mergeKSortedArrays(vector<vector<int>>& arrays, int k) {
 
     for (int i = 0; i < k; i++) {
         if (arrays[i].size() > 0) {
+            // Node* temp = new Node(arr[i][0], i, 0);
+            // minHeap.push(temp);
             Node node(arrays[i][0], i, 0);
             minHeap.push(node);
         }
