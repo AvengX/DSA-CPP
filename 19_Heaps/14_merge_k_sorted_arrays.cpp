@@ -37,10 +37,10 @@ vector<int> mergeKSortedArrays(vector<vector<int>>& arrays, int k) {
 
         result.push_back(top.data);
 
-        int nextCol = top.col + 1;
-        if (nextCol < arrays[top.row].size()) {
-            Node next(arrays[top.row][nextCol], top.row, nextCol);
-            minHeap.push(next);
+        if (top.col + 1 < arrays[top.row].size()) {
+            // Node next(arrays[top.row][top.col + 1], top.row, top.col + 1);
+            //minHeap.push(next);
+            minHeap.push(Node(arrays[top.row][top.col + 1], top.row, top.col + 1));
         }
     }
 
@@ -70,3 +70,13 @@ int main() {
 
     return 0;
 }
+
+// Time Complexity:  O(K * N * log K)
+//   - K = number of arrays, N = avg size of each array
+//   - Heap holds at most K elements at any time
+//   - Each push/pop is O(log K), done for all K*N elements
+//
+// Space Complexity: O(K * N)
+//   - O(K)   -> min-heap (at most K elements)
+//   - O(K*N) -> result vector (stores all elements)
+//   - Auxiliary space (excluding output): O(K)
