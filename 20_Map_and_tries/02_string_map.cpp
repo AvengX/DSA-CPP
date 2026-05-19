@@ -21,3 +21,5 @@ int main() {
     }
     return 0;
 }
+//g++ 02_string_map.cpp -o main
+//main < input.txt > output.txt
